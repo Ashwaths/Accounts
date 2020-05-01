@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="../Account/style.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<table id="myList">
+  <tr>
+    <th>Account</th>
+    <th><img src="../Account/Images/up-arrow.svg" width="20" heigth="20"/>&nbsp;Available Cash<br>Today's Change</th>
+  </tr>
+  <tr>
+    <td style="color: #005ce6;">IRA - 5200</td>
+    <td><span style="color:black;">$5,763.36</span><br><span style="color:red;">-0.08% / $8,916.69</span></td>
+  </tr>
+  <tr>
+    <td style="color: #005ce6;">AAA - 1812</td>
+    <td><span style="color: black;">$2,010,926.10</span><br><span style="color: green;">+0.21% / $38,881.63</span></td>
+  </tr>
+  <tr>
+    <td style="color: #005ce6;">AAA - 3810</td>
+    <td><span style="color: black;">$10,050,054.07</span><br><span style="color: green;">+0.07% / $8,916.69</span></td>
+  </tr>
+</table>
+<div id="loadMore" style="">
+      <a href="#">Load More</a>
+    </div>
+    <!-- <div id="showLess" style="padding-top: 0px;">Show less</div> -->
+    <script>
+$(document).ready(function(){
+  $(".content").slice(0, 4).show();
+  $("#loadMore").on("click", function(e){
+    e.preventDefault();
+    $(".content:hidden").slice(0, 4).slideDown();
+    if($(".content:hidden").length == 0) {
+      $("#loadMore").text("No Content").addClass("noContent");
+    }
+  });
+  
+})
+</script>
+</body>
+</html>
